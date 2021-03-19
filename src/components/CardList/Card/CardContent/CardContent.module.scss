@@ -1,0 +1,10 @@
+.content{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  transition: 1s ease;
+  img{
+    height: 200px;
+    width: auto;
+  }
+}
