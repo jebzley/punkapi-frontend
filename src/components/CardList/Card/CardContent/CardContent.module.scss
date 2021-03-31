@@ -1,10 +1,26 @@
 .content{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 200px auto;
   padding: 20px;
-  transition: 1s ease;
+  height: 1px;
   img{
     height: 200px;
+    grid-column: 1;
     width: auto;
+  }
+}
+
+.beerDescription{
+  width: 70%;
+}
+.beerContent{
+  grid-column:2;
+  display: flex;
+  flex-direction: row;
+}
+
+.beerFacts{
+  ul{
+    list-style: none;
   }
 }

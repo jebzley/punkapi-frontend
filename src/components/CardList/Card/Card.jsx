@@ -3,6 +3,7 @@ import styles from "./Card.module.scss";
 import CardContent from "./CardContent";
 import { useState } from "react";
 
+
 const Card = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const beerInfo = props.data;
@@ -14,19 +15,17 @@ const Card = (props) => {
     setIsOpen(!isOpen)
   }
   
-  const contentResizer = () =>{
-    return isOpen ? 'content' : 'hidden'
-  }
   return (
     <div className={styles.card} onClick = {panelOpener}>
       <div className={styles.topBar}>
         <div className={styles.title}>
         <h1>{name}</h1>
-        <h2>{tagline}</h2>
         </div>
-        <h3>ABV: {abv}</h3>
+        <h1>ABV: {abv}</h1>
       </div>
-      {isOpen ? <CardContent beerInfo = {beerInfo} openFunc={contentResizer}/> : <></>}
+      
+      {isOpen ? 
+          <CardContent beerInfo = {beerInfo}/>: <></>}
       
     </div>
   );
