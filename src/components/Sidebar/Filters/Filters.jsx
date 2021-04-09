@@ -1,25 +1,44 @@
 import React from "react";
+import styles from "./Filters.module.scss";
 
 const Filters = (props) => {
-  
   return (
-    <form onChange={(e) => props.handleFilter(props.searchText, e)}>
+    <form className={styles.filters} onChange={async (e) => await props.handleFilter(props.searchText, e)}>
       <h2>Sort By</h2>
       <h3>ABV</h3>
-      <label for="abv-ascending">Ascending</label>
-      <input type="radio" name="sorting" value="abv-ascending" />
-      <label for="abv-descending">Descending</label>
-      <input type="radio" name="sorting" value="abv-descending" />
+      <div className={styles.filterRow}>
+        <div className={styles.radioAndTag}>
+          <label for="abv-ascending">Ascending</label>
+          <input type="radio" name="sorting" value="abv-ascending" />
+        </div>
+        <div className={styles.radioAndTag}>
+          <label for="abv-descending">Descending</label>
+          <input type="radio" name="sorting" value="abv-descending" />
+        </div>
+      </div>
       <h3>EBC</h3>
-      <label for="ebc-ascending">Ascending</label>
-      <input type="radio" name="sorting" value="ebc-ascending" />
-      <label for="ebc-descending">Descending</label>
-      <input type="radio" name="sorting" value="ebc-descending" />
+      <div className={styles.filterRow}>
+        <div className={styles.radioAndTag}>
+          <label for="ebc-ascending">Ascending</label>
+          <input type="radio" name="sorting" value="ebc-ascending" />
+        </div>
+        <div className={styles.radioAndTag}>
+          <label for="ebc-descending">Descending</label>
+          <input type="radio" name="sorting" value="ebc-descending" />
+        </div>
+      </div>
+
       <h3>IBU</h3>
-      <label for="ibu-ascending">Ascending</label>
-      <input type="radio" name="sorting" value="ibu-ascending" />
-      <label for="abv-descending">Descending</label>
-      <input type="radio" name="sorting" value="ibu-descending" />
+      <div className={styles.filterRow}>
+        <div className={styles.radioAndTag}>
+          <label for="ibu-ascending">Ascending</label>
+          <input type="radio" name="sorting" value="ibu-ascending" />
+        </div>
+        <div className={styles.radioAndTag}>
+          <label for="abv-descending">Descending</label>
+          <input type="radio" name="sorting" value="ibu-descending" />
+        </div>
+      </div>
     </form>
   );
 };

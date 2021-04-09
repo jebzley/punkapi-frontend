@@ -29,7 +29,7 @@ const BeerColour = (props) => {
 
   return (
     <li>
-      <FontAwesomeIcon icon="beer" color={beerColourPicker(colour)} />
+      <FontAwesomeIcon icon="beer" color={beerColourPicker(colour)}  size={props.size}/>
       {beerColourDescriber(colour)}
     </li>
   );

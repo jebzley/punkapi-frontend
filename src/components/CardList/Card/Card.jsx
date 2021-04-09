@@ -8,8 +8,6 @@ const Card = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const beerInfo = props.data;
   const name = beerInfo.name;
-  const tagline = beerInfo.tagline;
-  const abv = beerInfo.abv;
   
   const panelOpener = () => {
     setIsOpen(!isOpen)
@@ -21,7 +19,6 @@ const Card = (props) => {
         <div className={styles.title}>
         <h1>{name}</h1>
         </div>
-        <h1>ABV: {abv}</h1>
       </div>
       
       {isOpen ? 

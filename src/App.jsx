@@ -2,11 +2,11 @@ import "./App.scss";
 import React from "react";
 import { useState, useEffect } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBeer, faLemon, faDizzy } from "@fortawesome/free-solid-svg-icons";
+import { faBeer, faLemon, faDizzy, faMeh, faSmile, faSmileBeam } from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "./components/Sidebar";
 import CardList from "./components/CardList";
 import { fetchBeers } from "./services/punkapi.service";
-library.add(faBeer, faLemon, faDizzy);
+library.add(faBeer, faLemon, faDizzy, faMeh, faSmile, faSmileBeam);
 
 function App() {
   const [beers, setBeers] = useState([]);
@@ -20,10 +20,10 @@ function App() {
     getBeerList("");
   }, []);
 
-  const handleFilter = async (searchText, e) => {
-    
+  const handleFilter = (searchText, e) => {
+    let sortedBeers = [];
     fetchBeers(searchText).then(beerList => {
-      let sortedBeers = [];
+      
       switch (e.target.value) {
         case "abv-ascending":
           sortedBeers = beerList.sort((a, b) => {
